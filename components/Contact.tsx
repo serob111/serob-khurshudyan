@@ -9,6 +9,7 @@ import {
   CheckIcon,
 } from "@/components/icons";
 import CopyEmailButton from "@/components/CopyEmailButton";
+import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
   return (
@@ -24,61 +25,67 @@ export default function Contact() {
             Let&apos;s talk about your backend, API, or AI integration project.
           </h3>
 
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            <CopyEmailButton
-              className="flex items-center justify-between gap-2 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-left text-sm text-(--color-fg) transition-colors hover:border-(--color-accent)"
-              idle={
-                <>
-                  <span className="flex items-center gap-2.5">
-                    <MailIcon className="size-4 text-(--color-accent)" />
-                    {profile.email}
-                  </span>
-                  <CopyIcon className="size-4 shrink-0 text-(--color-muted)" />
-                </>
-              }
-              copied={
-                <>
-                  <span className="flex items-center gap-2.5">
-                    <MailIcon className="size-4 text-(--color-accent)" />
-                    {profile.email}
-                  </span>
-                  <CheckIcon className="size-4 shrink-0 text-(--color-accent)" />
-                </>
-              }
-            />
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_1.2fr]">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+              <CopyEmailButton
+                className="flex items-center justify-between gap-2 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-left text-sm text-(--color-fg) transition-colors hover:border-(--color-accent)"
+                idle={
+                  <>
+                    <span className="flex items-center gap-2.5">
+                      <MailIcon className="size-4 text-(--color-accent)" />
+                      {profile.email}
+                    </span>
+                    <CopyIcon className="size-4 shrink-0 text-(--color-muted)" />
+                  </>
+                }
+                copied={
+                  <>
+                    <span className="flex items-center gap-2.5">
+                      <MailIcon className="size-4 text-(--color-accent)" />
+                      {profile.email}
+                    </span>
+                    <CheckIcon className="size-4 shrink-0 text-(--color-accent)" />
+                  </>
+                }
+              />
 
-            <a
-              href={`tel:${profile.phone.replace(/\s+/g, "")}`}
-              className="flex items-center gap-2.5 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-sm text-(--color-fg) transition-colors hover:border-(--color-accent)"
-            >
-              <PhoneIcon className="size-4 text-(--color-accent)" />
-              {profile.phone}
-            </a>
+              <a
+                href={`tel:${profile.phone.replace(/\s+/g, "")}`}
+                className="flex items-center gap-2.5 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-sm text-(--color-fg) transition-colors hover:border-(--color-accent)"
+              >
+                <PhoneIcon className="size-4 text-(--color-accent)" />
+                {profile.phone}
+              </a>
 
-            <div className="flex items-center gap-2.5 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-sm text-(--color-fg)">
-              <MapPinIcon className="size-4 text-(--color-accent)" />
-              {profile.location}
+              <div className="flex items-center gap-2.5 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-sm text-(--color-fg)">
+                <MapPinIcon className="size-4 text-(--color-accent)" />
+                {profile.location}
+              </div>
+
+              <div className="flex items-center gap-3">
+                <a
+                  href={profile.github}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-sm text-(--color-fg) transition-colors hover:border-(--color-accent) hover:text-(--color-accent)"
+                >
+                  <GitHubIcon className="size-4" />
+                  GitHub
+                </a>
+                <a
+                  href={profile.linkedin}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="flex flex-1 items-center justify-center gap-2 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-sm text-(--color-fg) transition-colors hover:border-(--color-accent) hover:text-(--color-accent)"
+                >
+                  <LinkedInIcon className="size-4" />
+                  LinkedIn
+                </a>
+              </div>
             </div>
 
-            <div className="flex items-center gap-3">
-              <a
-                href={profile.github}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex flex-1 items-center justify-center gap-2 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-sm text-(--color-fg) transition-colors hover:border-(--color-accent) hover:text-(--color-accent)"
-              >
-                <GitHubIcon className="size-4" />
-                GitHub
-              </a>
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex flex-1 items-center justify-center gap-2 rounded-md border border-(--color-border) bg-(--color-bg) px-4 py-3 text-sm text-(--color-fg) transition-colors hover:border-(--color-accent) hover:text-(--color-accent)"
-              >
-                <LinkedInIcon className="size-4" />
-                LinkedIn
-              </a>
+            <div className="border-t border-(--color-border) pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
+              <ContactForm />
             </div>
           </div>
         </div>

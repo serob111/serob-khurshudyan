@@ -5,9 +5,7 @@ import {
   MailIcon,
   MapPinIcon,
   ArrowUpRightIcon,
-  CheckIcon,
 } from "@/components/icons";
-import CopyEmailButton from "@/components/CopyEmailButton";
 
 export default function Hero() {
   return (
@@ -46,21 +44,13 @@ export default function Hero() {
           </div>
 
           <div className="mt-9 flex flex-wrap items-center gap-3">
-            <CopyEmailButton
+            <a
+              href="#contact"
               className="inline-flex items-center gap-2 rounded-md bg-(--color-accent) px-4 py-2.5 text-sm font-medium text-[#04120c] transition-opacity hover:opacity-90"
-              idle={
-                <>
-                  <MailIcon className="size-4" />
-                  Contact me
-                </>
-              }
-              copied={
-                <>
-                  <CheckIcon className="size-4" />
-                  Copied!
-                </>
-              }
-            />
+            >
+              <MailIcon className="size-4" />
+              Contact me
+            </a>
             <a
               href={profile.github}
               target="_blank"
@@ -100,15 +90,15 @@ export default function Hero() {
             <p className="mt-3 text-(--color-muted)">
               <span className="text-(--color-accent)">$</span> role
             </p>
-            <p className="text-(--color-fg)">Senior Full Stack Engineer</p>
+            <p className="text-(--color-fg)">{profile.title}</p>
             <p className="mt-3 text-(--color-muted)">
               <span className="text-(--color-accent)">$</span> focus
             </p>
-            <p className="text-(--color-fg)">Node.js · PostgreSQL · AI Integrations</p>
+            <p className="text-(--color-fg)">Node.js · NestJS · AI Integrations</p>
             <p className="mt-3 text-(--color-muted)">
               <span className="text-(--color-accent)">$</span> location
             </p>
-            <p className="text-(--color-fg)">Gyumri, Armenia</p>
+            <p className="text-(--color-fg)">{profile.location}</p>
             <p className="mt-3 flex items-center gap-1 text-(--color-muted)">
               <span className="text-(--color-accent)">$</span>
               <span className="inline-block h-3.5 w-2 translate-y-px bg-(--color-accent) animate-caret" />

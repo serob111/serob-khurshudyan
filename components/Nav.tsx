@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { nav, profile } from "@/lib/data";
 import { MenuIcon, CloseIcon } from "@/components/icons";
-import CopyEmailButton from "@/components/CopyEmailButton";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -32,11 +31,12 @@ export default function Nav() {
           ))}
         </ul>
 
-        <CopyEmailButton
+        <a
+          href="#contact"
           className="hidden rounded-md border border-(--color-border) px-3.5 py-1.5 text-sm text-(--color-fg) transition-colors hover:border-(--color-accent) hover:text-(--color-accent) md:inline-block"
-          idle="Get in touch"
-          copied="Copied!"
-        />
+        >
+          Get in touch
+        </a>
 
         <button
           type="button"
@@ -64,11 +64,13 @@ export default function Nav() {
               </li>
             ))}
             <li>
-              <CopyEmailButton
+              <a
+                href="#contact"
+                onClick={() => setOpen(false)}
                 className="block text-sm text-(--color-accent)"
-                idle="Get in touch"
-                copied="Copied!"
-              />
+              >
+                Get in touch
+              </a>
             </li>
           </ul>
         </div>
