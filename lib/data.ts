@@ -198,7 +198,7 @@ export const experience: Experience[] = [
     role: "Backend Engineer",
     org: "Prof It",
     employment: "Full-time",
-    period: "2021 – 2022",
+    period: "2020 – 2022",
     bullets: [
       "Delivered client projects from discovery through production, developing Node.js REST APIs with validation, error handling, and structured logging.",
       "Designed Prisma data layers and MySQL schemas; optimized queries and integrated third-party APIs with authentication, rate limits, and retries.",
